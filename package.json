@@ -1,0 +1,55 @@
+{
+  "name": "beaconly",
+  "version": "0.1.0",
+  "description": "Cookieless, self-hosted web analytics on Cloudflare's free tier.",
+  "license": "AGPL-3.0-only",
+  "author": "Anvith S G (https://github.com/anvithsg2004)",
+  "homepage": "https://github.com/anvithsg2004/beaconly#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anvithsg2004/beaconly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anvithsg2004/beaconly/issues"
+  },
+  "keywords": [
+    "analytics",
+    "privacy",
+    "cookieless",
+    "cloudflare-workers",
+    "d1",
+    "self-hosted",
+    "web-analytics"
+  ],
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "vite build && bun scripts/build-tracker.ts",
+    "deploy": "bun run build && wrangler deploy",
+    "setup": "bun scripts/setup.ts",
+    "hash-password": "bun scripts/hash-password.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build:next": "bun scripts/build-next.ts"
+  },
+  "dependencies": {
+    "hono": "4.13.13"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "1.4.4",
+    "@cloudflare/workers-types": "5.20261016.1",
+    "@fontsource-variable/geist": "5.3.0",
+    "@fontsource-variable/geist-mono": "5.3.0",
+    "@preact/preset-vite": "2.10.6",
+    "@preact/signals": "2.11.3",
+    "@types/bun": "latest",
+    "esbuild": "0.28.2",
+    "preact": "10.29.8",
+    "preact-iso": "2.12.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.4",
+    "vitest": "4.1.12",
+    "wrangler": "4.151.1"
+  }
+}
